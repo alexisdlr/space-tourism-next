@@ -1,14 +1,13 @@
 import Header from "@/components/Header";
 import PageContent from "./components/PageContent";
 
-export default function Home() {
+export default function Destination() {
   return (
     <div
       className="
-      
-        bg-[url('../public/images/home/background-home-mobile.jpg')]
-        md:bg-[url('../public/images/home/background-home-tablet.jpg')]
-        xl:bg-[url('../public/images/home/background-home-desktop.jpg')]
+        bg-[url('../public/images/destination/background-destination-mobile.jpg')]
+        md:bg-[url('../public/images/destination/background-destination-tablet.jpg')]
+        xl:bg-[url('../public/images/destination/background-destination-desktop.jpg')]
         h-full
         w-full
         bg-cover

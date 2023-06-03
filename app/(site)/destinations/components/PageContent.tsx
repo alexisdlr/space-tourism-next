@@ -1,6 +1,5 @@
 import { bellefair } from "@/app/fonts";
 import AnimatedBox from "@/components/AnimatedBox";
-import Link from "next/link";
 
 const PageContent = () => {
   return (
@@ -63,16 +62,13 @@ const PageContent = () => {
               items-center
             "
           >
-            <Link
-              href={"/destinations"}
-              className="w-56 h-56 md:w-72 md:h-72 bg-white rounded-full cursor-pointer hover:scale-125 transition flex justify-center items-center"
-            >
+            <div className=" w-56 h-56 md:w-72 md:h-72 bg-white rounded-full cursor-pointer hover:scale-125 transition flex justify-center items-center">
               <span className={bellefair.className}>
                 <p className="text-black text-2xl uppercase tracking-wider">
                   explore
                 </p>
               </span>
-            </Link>
+            </div>
           </div>
         </div>
       </div>

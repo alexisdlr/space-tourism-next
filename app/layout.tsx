@@ -1,8 +1,5 @@
-import Navbar from "@/components/Header";
+import { Barlow } from "./fonts";
 import "./globals.css";
-import { Barlow_Condensed } from "next/font/google";
-
-const barlow = Barlow_Condensed({ weight: "500", subsets: ["latin"] });
 
 export const metadata = {
   title: "Space Tourism Website",
@@ -16,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={barlow.className}>{children}</body>
+      <body className={Barlow.className}>{children}</body>
     </html>
   );
 }

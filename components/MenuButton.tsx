@@ -8,7 +8,7 @@ const MenuButton = ({ isOpen, onClick }: MenuButtonProps) => {
   return (
     <button
       className="
-        md:hidden
+        lg:hidden
         w-20
         h-20
         flex
