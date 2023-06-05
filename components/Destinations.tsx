@@ -17,10 +17,8 @@ const Destinations = () => {
   const handleDestinationClick = (destination: Destination) => {
     setIsLoading(true);
 
-    setTimeout(() => {
-      setSelectedDestination(destination);
-      setIsSelected(destination.name);
-    }, 300);
+    setSelectedDestination(destination);
+    setIsSelected(destination.name);
   };
 
   useEffect(() => {
@@ -28,7 +26,7 @@ const Destinations = () => {
       // Simular una carga asíncrona para esperar a que se reproduzca la animación
       setTimeout(() => {
         setIsLoading(false);
-      }, 300);
+      }, 400);
     }
   }, [isLoading]);
   return (
@@ -48,7 +46,9 @@ const Destinations = () => {
       items-center"
     >
       <AnimatePresence>
-        {selectedDestination && !isLoading && (
+        {isLoading ? (
+          ""
+        ) : (
           <AnimatedBox className="flex flex-col lg:flex-row w-full h-full gap-5 lg:gap-20">
             <DestinationImage destination={selectedDestination} />
             <DestinationContent
