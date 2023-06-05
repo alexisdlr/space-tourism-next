@@ -5,10 +5,10 @@ export default function Home() {
   return (
     <div
       className="
-      
         bg-[url('../public/images/home/background-home-mobile.jpg')]
         md:bg-[url('../public/images/home/background-home-tablet.jpg')]
         xl:bg-[url('../public/images/home/background-home-desktop.jpg')]
+        bg-transparent
         h-full
         w-full
         bg-cover

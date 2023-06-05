@@ -7,27 +7,27 @@ const PageContent = () => {
     <div className="w-full h-full flex items-center justify-center">
       <div
         className="
-          lg:grid 
-          lg:grid-cols-2 
           xl:px-40 
+          lg:flex-row
           lg:px-20
           lg:gap-x-20 
-          md:justify-center 
-          md:mt-10 
+          lg:justify-center
+          sm:justify-center
           h-full 
+          justify-center
           flex 
           flex-col 
           gap-y-20 
-          justify-start
           items-center
         "
       >
-        <AnimatedBox>
+        <AnimatedBox className="flex-5 w-full">
           <div
             className="
               md:w-full 
               h-full 
-              flex 
+              flex
+              flex-1 
               flex-col 
               gap-8 
               justify-center 
@@ -37,15 +37,15 @@ const PageContent = () => {
               lg:text-left 
             "
           >
-            <p className="text-paragraph text-2xl md:text-3xl">
+            <p className="text-paragraph text-xl uppercase tracking-[5px] lg:text-2xl md:text-3xl">
               So you want to travel to
             </p>
             <span className={bellefair.className}>
-              <h1 className="text-white text-5xl lg:text-9xl uppercase tracking-widest">
+              <h1 className="text-white text-8xl lg:text-9xl uppercase tracking-widest">
                 Space
               </h1>
             </span>
-            <p className="text-paragraph text-sm leading-6 lg:text-md md:leading-8 w-full px-6 md:px-16 lg:px-0">
+            <p className="text-paragraph font-light text-sm leading-6 lg:text-xl lg:leading-8 tracking-[1.5px] w-full px-5 md:px-16 xl:pr-80 lg:px-0">
               Let’s face it; if you want to go to space, you might as well
               genuinely go to outer space and not hover kind of on the edge of
               it. Well sit back, and relax because we’ll give you a truly out of
@@ -53,7 +53,7 @@ const PageContent = () => {
             </p>
           </div>
         </AnimatedBox>
-        <div className="w-full">
+        <div>
           <div
             className="
               w-full 

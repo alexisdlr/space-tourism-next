@@ -3,11 +3,13 @@
 import { motion } from "framer-motion";
 
 interface AnimatedBoxProps {
+  className?: string;
   children: React.ReactNode;
 }
-const AnimatedBox = ({ children }: AnimatedBoxProps) => {
+const AnimatedBox = ({ children, className }: AnimatedBoxProps) => {
   return (
     <motion.div
+      className={className}
       viewport={{ once: false }}
       animate={{
         opacity: [0, 1],

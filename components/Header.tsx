@@ -27,10 +27,30 @@ const routes = [
 
 const Header = () => {
   return (
-    <header className="flex overflow-hidden justify-between items-center mt-2 md:py-20 lg:py-0 px-5 md:px-20 lg:px-0 md:h-20 md:fixed md:top-0 w-full">
+    <header
+      className="
+      lg:fixed 
+      lg:top-0 
+      lg:py-2
+      lg:px-0 
+      md:py-20 
+      md:px-20 
+      md:h-20 
+      flex 
+      overflow-hidden 
+      justify-between 
+      items-center 
+      mt-4
+      px-5 
+      w-full"
+    >
       <div
         className="
-          h-20
+          relative
+          w-12
+          h-12
+          md:w-16
+          md:h-16
           flex
           items-center
           justify-center
@@ -39,20 +59,25 @@ const Header = () => {
         "
       >
         <Image
-          width={50}
-          height={50}
-          className="object-cover"
+          className="relative w-full h-full object-contain"
+          fill
           src={"./images/shared/logo.svg"}
           alt="logo"
         />
       </div>
+
+      <div className="hidden lg:block lg:absolute lg:top-10 lg:left-[20%] w-1/3 h-[2px]">
+        <Image src={"/images/Rectangle.png"} alt="rectangle" fill />
+      </div>
+
       <ListOfRoutes
         routes={routes}
         className="
             hidden
             lg:flex
+            lg:gap-10
             lg:static
-            lg:px-6
+            lg:px-20
             lg:text-base
             lg:tracking-normal
             lg:pt-0
