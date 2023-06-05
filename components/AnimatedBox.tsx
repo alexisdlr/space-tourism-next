@@ -13,9 +13,10 @@ const AnimatedBox = ({ children, className }: AnimatedBoxProps) => {
       viewport={{ once: false }}
       animate={{
         opacity: [0, 1],
-        y: [-100, 0],
+        y: [-200, 0],
         transition: { duration: 0.4, ease: "easeInOut" },
       }}
+      exit={{ opacity: [1, 0] }}
     >
       {children}
     </motion.div>

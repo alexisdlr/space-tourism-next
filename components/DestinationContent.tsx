@@ -58,6 +58,7 @@ const DestinationContent = ({
       <p className="text-paragraph text-sm leading-6 lg:text-xl tracking-wide md:leading-8 w-full px-6 md:px-16 lg:px-0">
         {destination.description}
       </p>
+      <hr />
     </div>
   );
 };

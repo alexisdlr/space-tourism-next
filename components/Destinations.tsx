@@ -1,24 +1,36 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import data from "@/data.json";
 import { Destination } from "@/types";
 import AnimatedBox from "./AnimatedBox";
-import { bellefair } from "@/app/fonts";
 import DestinationImage from "./DestinationImage";
 import DestinationContent from "./DestinationContent";
 import { AnimatePresence } from "framer-motion";
 
 const Destinations = () => {
   const [isSelected, setIsSelected] = useState("Moon");
+  const [isLoading, setIsLoading] = useState(false);
   const [selectedDestination, setSelectedDestination] = useState(
     data.destinations[0]
   );
 
   const handleDestinationClick = (destination: Destination) => {
-    setSelectedDestination(destination);
-    setIsSelected(destination.name);
+    setIsLoading(true);
+
+    setTimeout(() => {
+      setSelectedDestination(destination);
+      setIsSelected(destination.name);
+    }, 300);
   };
 
+  useEffect(() => {
+    if (isLoading) {
+      // Simular una carga asíncrona para esperar a que se reproduzca la animación
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 300);
+    }
+  }, [isLoading]);
   return (
     <div
       className="
@@ -36,15 +48,17 @@ const Destinations = () => {
       items-center"
     >
       <AnimatePresence>
-        <AnimatedBox className="flex flex-col lg:flex-row w-full h-full gap-5 lg:gap-20">
-          <DestinationImage destination={selectedDestination} />
-          <DestinationContent
-            destination={selectedDestination}
-            destinations={data.destinations}
-            handleClick={handleDestinationClick}
-            isSelected={isSelected}
-          />
-        </AnimatedBox>
+        {selectedDestination && !isLoading && (
+          <AnimatedBox className="flex flex-col lg:flex-row w-full h-full gap-5 lg:gap-20">
+            <DestinationImage destination={selectedDestination} />
+            <DestinationContent
+              destination={selectedDestination}
+              destinations={data.destinations}
+              handleClick={handleDestinationClick}
+              isSelected={isSelected}
+            />
+          </AnimatedBox>
+        )}
       </AnimatePresence>
     </div>
   );
